@@ -1,0 +1,59 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Reflection;
+using HarmonyLib;
+using Verse;
+using Verse.AI;
+using RimWorld;
+using CombatExtended;
+using UnityEngine;
+using CombatExtended.AI;
+using static CombatExtendedAimbot.CEASettings;
+
+namespace CombatExtendedAimbot
+{
+    class DebugPatch
+    {
+        [HarmonyPatch(typeof(Pawn), "GetGizmos")]
+        class Debugpatch
+        {
+            public static IEnumerable<Gizmo> Postfix(IEnumerable<Gizmo> __result, Pawn __instance)
+            {
+                if (LoadedModManager.GetMod<CombatExtendedAimbotMod>().GetSettings<CombatExtendedAimbotSettings>().EnableDebugMode)
+                {
+                    foreach (Gizmo result in __result)
+                    {
+                        yield return result;
+                    }
+                    if (__instance == null)
+                    {
+                        yield break;
+                    }
+                    CompFireModes comp = __instance.equipment?.Primary?.TryGetComp<CompFireModes>();
+                    if (comp == null)
+                    {
+                        yield break;
+                    }
+                    Command_Action toggleFireModeGizmo = new Command_Action
+                    {
+                        defaultLabel = ("CE_" + comp.CurrentFireMode.ToString() + "Label").Translate(),
+                        defaultDesc = "CE_ToggleFireModeDesc".Translate(),
+                        icon = ContentFinder<Texture2D>.Get("UI/Buttons/" + comp.CurrentFireMode),
+                        tutorTag = ((comp.AvailableFireModes.Count > 1) ? "CE_FireModeToggle" : null)
+                    };
+                    yield return toggleFireModeGizmo;
+                    Command_Action toggleAimModeGizmo = new Command_Action
+                    {
+                        defaultLabel = ("CE_" + comp.CurrentAimMode.ToString() + "Label").Translate(),
+                        defaultDesc = "CE_ToggleAimModeDesc".Translate(),
+                        icon = ContentFinder<Texture2D>.Get("UI/Buttons/" + comp.CurrentAimMode)
+                    };
+                    yield return toggleAimModeGizmo;
+                }
+            }
+        }
+    }
+}

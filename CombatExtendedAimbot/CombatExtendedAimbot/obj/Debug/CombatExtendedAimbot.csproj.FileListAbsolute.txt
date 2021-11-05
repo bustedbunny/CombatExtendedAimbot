@@ -1,0 +1,6 @@
+D:\Games\Steam\steamapps\common\RimWorld\Mods\ThrowThem\CombatExtended\Assemblies\CombatExtendedAimbot.dll
+D:\Games\Steam\steamapps\common\RimWorld\Mods\ThrowThem\CombatExtended\Assemblies\CombatExtendedAimbot.pdb
+D:\Mods\CombatExtendedAimbot\CombatExtendedAimbot\obj\Debug\CombatExtendedAimbot.csproj.AssemblyReference.cache
+D:\Mods\CombatExtendedAimbot\CombatExtendedAimbot\obj\Debug\CombatExtendedAimbot.csproj.CoreCompileInputs.cache
+D:\Mods\CombatExtendedAimbot\CombatExtendedAimbot\obj\Debug\CombatExtendedAimbot.dll
+D:\Mods\CombatExtendedAimbot\CombatExtendedAimbot\obj\Debug\CombatExtendedAimbot.pdb

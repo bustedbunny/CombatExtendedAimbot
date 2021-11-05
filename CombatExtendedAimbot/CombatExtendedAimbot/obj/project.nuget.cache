@@ -1,0 +1,11 @@
+{
+  "version": 2,
+  "dgSpecHash": "x8COgdVDTeFRi8cquuVUPY/MKQzOr5vehlPJC8V+UxqJfEeoiYZhJoQlh3Qx57sNy0ChBQUr2F0z3gnDmBzQSg==",
+  "success": true,
+  "projectFilePath": "F:\\VisualStudioRepos\\RimworldMods\\CombatExtendedAimbot\\CombatExtendedAimbot\\CombatExtendedAimbot.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\buste\\.nuget\\packages\\krafs.rimworld.ref\\1.3.3159\\krafs.rimworld.ref.1.3.3159.nupkg.sha512",
+    "C:\\Users\\buste\\.nuget\\packages\\lib.harmony\\2.1.1\\lib.harmony.2.1.1.nupkg.sha512"
+  ],
+  "logs": []
+}
